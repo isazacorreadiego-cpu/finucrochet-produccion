@@ -1,0 +1,19 @@
+# robots.txt — Finucrochet
+# https://finucrochet.com
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+Disallow: /css/
+Disallow: /js/
+
+Sitemap: https://finucrochet.com/sitemap.xml
