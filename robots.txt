@@ -1,9 +1,10 @@
-# robots.txt — Finucrochet
+# robots.txt â€” Finucrochet
 # https://finucrochet.com
 
 User-agent: *
 Allow: /
 
+# Bloquear scrapers de IA
 User-agent: GPTBot
 Disallow: /
 
@@ -13,7 +14,10 @@ Disallow: /
 User-agent: CCBot
 Disallow: /
 
-Disallow: /css/
-Disallow: /js/
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
 
 Sitemap: https://finucrochet.com/sitemap.xml

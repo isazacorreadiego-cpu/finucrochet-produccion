@@ -1,84 +1,76 @@
 # 🧶 Finucrochet — Página Web
 
-## 📁 Estructura del proyecto
+Sitio estático de Finucrochet (amigurumis artesanales en Medellín, Colombia).
+
+## 📁 Estructura
 
 ```
 finucrochet/
-├── index.html              ← Página principal (abrir en navegador)
+├── index.html         ← Estructura HTML (solo markup + JSON-LD/OG)
 ├── css/
-│   └── styles.css          ← Todos los estilos
+│   └── styles.css     ← Todos los estilos
 ├── js/
-│   └── main.js             ← JavaScript + GALERÍA DE TRABAJOS
-├── img/                    ← Todas las imágenes van aquí
-│   ├── logo_transparent.png
-│   ├── CABECERA.png
-│   ├── pesebre.png
-│   ├── ANGEL.png
-│   ├── LLAVERO_OSO.png
-│   └── PIE_DE_PAGINA.jpg
-└── README.md               ← Este archivo
+│   └── main.js        ← Lógica + array de productos (galleryItems = ITEMS)
+├── img/               ← Imágenes (.webp recomendado)
+├── robots.txt
+├── sitemap.xml
+├── .htaccess          ← Caché + GZIP para Apache
+├── docker-compose.yml ← nginx local en :8080
+└── CNAME              ← Dominio GitHub Pages
 ```
 
-## 🖼️ Cómo agregar un nuevo trabajo a la galería
+## 🚀 Ver la página localmente
 
-### Paso 1: Guarda la imagen
-Copia tu nueva imagen a la carpeta `img/`
+Opción 1 — abrir directamente: doble-click en `index.html`.
 
-### Paso 2: Abre `js/main.js` en VS Code
-Busca el array `galleryItems` (está bien señalizado con comentarios).
-
-### Paso 3: Agrega un nuevo objeto
-Copia y pega este bloque justo antes del cierre del array:
-
-```javascript
-{
-  img: "img/MI_NUEVA_IMAGEN.png",   // ← Nombre de tu imagen
-  title: "Nombre del Trabajo",       // ← Nombre visible
-  category: "decoracion",            // ← Categoría (ver abajo)
-  size: ""                           // ← Tamaño (ver abajo)
-},
-```
-
-### Categorías disponibles
-| Valor         | Se muestra como   |
-|---------------|-------------------|
-| `"navidad"`   | 🎄 Navideño       |
-| `"decoracion"`| 🏠 Decoración     |
-| `"llaveros"`  | 🔑 Llavero        |
-| `"animales"`  | 🐻 Animal         |
-| `"personajes"`| 👸 Personaje      |
-
-### Tamaños para el grid
-| Valor    | Efecto                        |
-|----------|-------------------------------|
-| `""`     | Tamaño normal (1×1)           |
-| `"tall"` | Doble alto (ocupa 2 filas)    |
-| `"wide"` | Doble ancho (ocupa 2 columnas)|
-
-## 🆕 Cómo crear una nueva categoría
-
-1. Abre `index.html`
-2. Busca la sección `gallery-filters`
-3. Agrega un nuevo botón:
-```html
-<button class="filter-btn" data-filter="mi_categoria">🏷️ Mi Categoría</button>
-```
-4. Abre `js/main.js`
-5. En la función `getCategoryLabel`, agrega:
-```javascript
-mi_categoria: '🏷️ Mi Categoría',
-```
-6. Usa `"mi_categoria"` como category en tus nuevos items
-
-## 🚀 Cómo ver la página
-
-Abre `index.html` directamente en tu navegador, o usa Live Server en VS Code:
-1. Instala la extensión "Live Server" en VS Code
+Opción 2 — Live Server (recomendado, soporta hot-reload):
+1. Instala "Live Server" en VS Code
 2. Click derecho en `index.html` → "Open with Live Server"
+
+Opción 3 — Docker:
+```bash
+docker compose up -d
+# Ver en http://localhost:8080
+```
+
+## 🖼️ Cómo agregar un trabajo nuevo a la galería
+
+1. Guarda la imagen en `img/` (preferentemente `.webp`).
+2. Abre [`js/main.js`](js/main.js) y busca el array `ITEMS`.
+3. Agrega un objeto al final, con esta forma:
+
+```javascript
+{ img: 'img/MI_IMAGEN.webp', title: 'Nombre Visible', cat: 'decoracion', size: '' },
+```
+
+| Campo | Valores |
+|-------|---------|
+| `cat` | `'navidad'` · `'decoracion'` · `'llaveros'` · `'animales'` · `'personajes'` |
+| `size` | `''` (1×1) · `'tall'` (1×2) · `'wide'` (2×1) |
+
+## 🆕 Crear una categoría nueva
+
+1. En `js/main.js`, agrega la categoría al objeto `CATS`:
+   ```javascript
+   const CATS = { ..., mi_categoria: '🏷️ Mi Categoría' };
+   ```
+2. En `index.html`, agrega un botón filtro dentro de `#galFilters`:
+   ```html
+   <button class="gf" data-f="mi_categoria" aria-pressed="false">🏷️ Mi Categoría</button>
+   ```
+3. Usa `cat: 'mi_categoria'` en los items que correspondan.
 
 ## ✏️ Personalización rápida
 
-- **Colores**: Edita las variables CSS en `css/styles.css` (líneas 7-19)
-- **Textos**: Edita directamente en `index.html`
-- **WhatsApp**: Cambia `https://wa.me/` por `https://wa.me/57TUNUMERO` en `index.html`
-- **Redes sociales**: Busca los `href="#"` en el footer y reemplaza con tus URLs
+- **Colores**: variables CSS en [`css/styles.css`](css/styles.css#L7-L24).
+- **Textos**: directamente en [`index.html`](index.html).
+- **WhatsApp**: cambia la constante `WA` al inicio de [`js/main.js`](js/main.js#L5) (también actualiza los `href="https://wa.me/..."` del HTML).
+- **Redes sociales**: actualizar los `<a href>` del footer en [`index.html`](index.html).
+
+## 🌐 SEO incluido
+
+- Meta tags Open Graph + Twitter Card
+- JSON-LD `LocalBusiness` para Google Business
+- `sitemap.xml` y `robots.txt`
+- `prefers-reduced-motion` para accesibilidad
+- Imágenes con `width`/`height` para evitar CLS

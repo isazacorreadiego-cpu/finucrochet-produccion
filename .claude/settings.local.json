@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -iE \"\\\\.png$|\\\\.jpg$|graduado\")",
+      "Bash(node --check js/main.js)",
+      "Bash(docker compose *)",
+      "PowerShell(docker compose -f \"c:/Users/Axity/Desktop/Finu/finucrochet-produccion/docker-compose.yml\" up -d 2>&1)",
+      "PowerShell(python --version 2>&1)",
+      "PowerShell(py --version 2>&1)",
+      "PowerShell($proc = Start-Process -FilePath \"python\" -ArgumentList \"-m\",\"http.server\",\"8765\",\"--directory\",\"c:/Users/Axity/Desktop/Finu/finucrochet-produccion\" -PassThru -WindowStyle Hidden; Start-Sleep -Seconds 2; Write-Output \"PID=$\\($proc.Id\\)\")",
+      "PowerShell($urls = @\\(\"http://127.0.0.1:8765/\",\"http://127.0.0.1:8765/css/styles.css\",\"http://127.0.0.1:8765/js/main.js\",\"http://127.0.0.1:8765/robots.txt\",\"http://127.0.0.1:8765/sitemap.xml\",\"http://127.0.0.1:8765/img/CABECERA.webp\",\"http://127.0.0.1:8765/img/Finu_logo.webp\",\"http://127.0.0.1:8765/img/muneco_graduado.webp\"\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5; \"{0}  {1}  {2} bytes\" -f $r.StatusCode, $u, $r.RawContentLength } catch { \"ERR  $u  $\\($_.Exception.Message\\)\" } })",
+      "PowerShell(Stop-Process -Id 28764 -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(\"Server detenido\")",
+      "PowerShell($proc = Start-Process -FilePath \"python\" -ArgumentList \"-m\",\"http.server\",\"8765\",\"--directory\",\"c:/Users/Axity/Desktop/Finu/finucrochet-produccion\" -PassThru -WindowStyle Hidden; Start-Sleep -Seconds 1; \"Server PID=$\\($proc.Id\\) en http://127.0.0.1:8765/\")",
+      "PowerShell(try { Stop-Process -Id 10264 -Force -ErrorAction SilentlyContinue } catch {}; $proc = Start-Process -FilePath \"python\" -ArgumentList \"-m\",\"http.server\",\"8765\",\"--directory\",\"c:/Users/Axity/Desktop/Finu/finucrochet-produccion\" -PassThru -WindowStyle Hidden; Start-Sleep -Seconds 1; Write-Output \"PID=$\\($proc.Id\\)\")",
+      "PowerShell($urls = @\\(\"http://127.0.0.1:8765/\",\"http://127.0.0.1:8765/css/styles.css\",\"http://127.0.0.1:8765/js/main.js\",\"http://127.0.0.1:8765/img/icons.svg\",\"http://127.0.0.1:8765/img/CABECERA.webp\",\"http://127.0.0.1:8765/img/coleccion_productos.webp\",\"http://127.0.0.1:8765/img/llavero_ositos_coleccion.webp\",\"http://127.0.0.1:8765/img/rosa_grande.webp\"\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5; \"{0}  {1}  {2} bytes\" -f $r.StatusCode, $u, $r.RawContentLength } catch { \"ERR  $u  $\\($_.Exception.Message\\)\" } })",
+      "PowerShell($html = \\(Invoke-WebRequest -Uri \"http://127.0.0.1:8765/\" -UseBasicParsing\\).Content; \"Iconos SVG \\(use href\\): $\\([regex]::Matches\\($html, '<use href=\"img/icons\\\\.svg#'\\).Count\\)\"; \"Hero slides: $\\([regex]::Matches\\($html, 'class=\"hero-slide'\\).Count\\)\"; \"Stats con counter: $\\([regex]::Matches\\($html, 'data-count='\\).Count\\)\"; \"Bento cells: $\\([regex]::Matches\\($html, 'class=\"bento-cell'\\).Count\\)\"; \"Filtros galería: $\\([regex]::Matches\\($html, 'class=\"gf'\\).Count\\)\"; \"Sección BTS presente: $\\([regex]::Matches\\($html, 'id=\"bts-title\"'\\).Count -gt 0\\)\"; \"Lightbox WA button: $\\([regex]::Matches\\($html, 'id=\"lbWA\"'\\).Count -gt 0\\)\"; \"Cursor toggle: $\\([regex]::Matches\\($html, 'id=\"cursorToggle\"'\\).Count -gt 0\\)\"; \"Caveat font cargada: $\\([regex]::Matches\\($html, 'family=Caveat'\\).Count -gt 0\\)\")",
+      "Bash(mv \"Flores Amarillo.png\" \"flores_amarillo.png\")",
+      "Bash(mv \"Flores Rosado.png\" \"flores_rosado.png\")",
+      "Bash(mv \"Maomao.png\" \"maomao.png\")",
+      "Bash(mv \"Perro Personalizado.png\" \"perro_personalizado.png\")",
+      "Bash(mv \"Virgen de guadalupe.png\" \"virgen_de_guadalupe.png\")",
+      "PowerShell($urls = @\\(\"http://127.0.0.1:8765/img/flores_amarillo.png\",\"http://127.0.0.1:8765/img/flores_rosado.png\",\"http://127.0.0.1:8765/img/maomao.png\",\"http://127.0.0.1:8765/img/perro_personalizado.png\",\"http://127.0.0.1:8765/img/virgen_de_guadalupe.png\",\"http://127.0.0.1:8765/js/main.js\"\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5; \"{0}  {1}  {2:N0} bytes\" -f $r.StatusCode, $u, $r.RawContentLength } catch { \"ERR  $u  $\\($_.Exception.Message\\)\" } })",
+      "PowerShell($urls = @\\(\"http://127.0.0.1:8765/img/flores_amarillo.webp\",\"http://127.0.0.1:8765/img/flores_rosado.webp\",\"http://127.0.0.1:8765/img/maomao.webp\",\"http://127.0.0.1:8765/img/perro_personalizado.webp\",\"http://127.0.0.1:8765/img/virgen_de_guadalupe.webp\"\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5; \"{0}  {1}  {2:N0} bytes\" -f $r.StatusCode, $u, $r.RawContentLength } catch { \"ERR  $u  $\\($_.Exception.Message\\)\" } })"
+    ]
+  }
+}
