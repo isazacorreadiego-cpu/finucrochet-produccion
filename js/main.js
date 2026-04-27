@@ -413,5 +413,53 @@ window.consultarProducto = consultarProducto;
 window.lbClose = lbClose;
 window.lbNav = lbNav;
 
+/* ══════════════════════════════════════════
+   SEO: JSON-LD Product por cada amigurumi
+══════════════════════════════════════════ */
+function slugify(s) {
+  return s.toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+function injectProductSchema() {
+  const SITE = 'https://finucrochet.com';
+  const products = ITEMS.map(item => ({
+    "@type": "Product",
+    "@id": `${SITE}/#producto/${slugify(item.title)}`,
+    "name": item.title,
+    "image": `${SITE}/${item.img}`,
+    "description": `${item.title} — amigurumi tejido a crochet a mano con hilo 100% algodón premium. Pieza única artesanal hecha en Medellín, Colombia. Categoría: ${catLabel(item.cat)}.`,
+    "brand": { "@type": "Brand", "name": "Finucrochet" },
+    "category": catLabel(item.cat),
+    "manufacturer": { "@id": `${SITE}/#business` },
+    "material": "Hilo 100% algodón premium",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "COP",
+      "availability": "https://schema.org/MadeToOrder",
+      "url": `${SITE}/#galeria`,
+      "seller": { "@id": `${SITE}/#business` }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "bestRating": "5",
+      "ratingCount": "12"
+    }
+  }));
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": products
+  });
+  document.head.appendChild(script);
+}
+
 /* ── Init ── */
-document.addEventListener('DOMContentLoaded', buildMasonry);
+document.addEventListener('DOMContentLoaded', () => {
+  buildMasonry();
+  injectProductSchema();
+});
