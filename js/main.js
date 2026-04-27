@@ -436,11 +436,29 @@ function injectProductSchema() {
     "manufacturer": { "@id": `${SITE}/#business` },
     "material": "Hilo 100% algodón premium",
     "offers": {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       "priceCurrency": "COP",
-      "availability": "https://schema.org/MadeToOrder",
+      "lowPrice": "25000",
+      "highPrice": "300000",
+      "offerCount": 1,
+      "availability": "https://schema.org/PreOrder",
       "url": `${SITE}/#galeria`,
-      "seller": { "@id": `${SITE}/#business` }
+      "seller": { "@id": `${SITE}/#business` },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "COP" },
+        "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "CO" },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": { "@type": "QuantitativeValue", "minValue": 3, "maxValue": 30, "unitCode": "DAY" },
+          "transitTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 5, "unitCode": "DAY" }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "CO",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",

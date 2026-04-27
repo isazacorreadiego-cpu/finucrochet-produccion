@@ -21,7 +21,8 @@
       "Bash(mv \"Perro Personalizado.png\" \"perro_personalizado.png\")",
       "Bash(mv \"Virgen de guadalupe.png\" \"virgen_de_guadalupe.png\")",
       "PowerShell($urls = @\\(\"http://127.0.0.1:8765/img/flores_amarillo.png\",\"http://127.0.0.1:8765/img/flores_rosado.png\",\"http://127.0.0.1:8765/img/maomao.png\",\"http://127.0.0.1:8765/img/perro_personalizado.png\",\"http://127.0.0.1:8765/img/virgen_de_guadalupe.png\",\"http://127.0.0.1:8765/js/main.js\"\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5; \"{0}  {1}  {2:N0} bytes\" -f $r.StatusCode, $u, $r.RawContentLength } catch { \"ERR  $u  $\\($_.Exception.Message\\)\" } })",
-      "PowerShell($urls = @\\(\"http://127.0.0.1:8765/img/flores_amarillo.webp\",\"http://127.0.0.1:8765/img/flores_rosado.webp\",\"http://127.0.0.1:8765/img/maomao.webp\",\"http://127.0.0.1:8765/img/perro_personalizado.webp\",\"http://127.0.0.1:8765/img/virgen_de_guadalupe.webp\"\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5; \"{0}  {1}  {2:N0} bytes\" -f $r.StatusCode, $u, $r.RawContentLength } catch { \"ERR  $u  $\\($_.Exception.Message\\)\" } })"
+      "PowerShell($urls = @\\(\"http://127.0.0.1:8765/img/flores_amarillo.webp\",\"http://127.0.0.1:8765/img/flores_rosado.webp\",\"http://127.0.0.1:8765/img/maomao.webp\",\"http://127.0.0.1:8765/img/perro_personalizado.webp\",\"http://127.0.0.1:8765/img/virgen_de_guadalupe.webp\"\\); foreach \\($u in $urls\\) { try { $r = Invoke-WebRequest -Uri $u -UseBasicParsing -TimeoutSec 5; \"{0}  {1}  {2:N0} bytes\" -f $r.StatusCode, $u, $r.RawContentLength } catch { \"ERR  $u  $\\($_.Exception.Message\\)\" } })",
+      "WebFetch(domain:www.finucrochet.com)"
     ]
   }
 }
