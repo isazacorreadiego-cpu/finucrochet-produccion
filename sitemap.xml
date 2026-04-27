@@ -4,44 +4,44 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
-    <loc>https://finucrochet.com/</loc>
+    <loc>https://www.finucrochet.com/</loc>
     <lastmod>2026-04-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es-CO" href="https://finucrochet.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://finucrochet.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://www.finucrochet.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.finucrochet.com/"/>
 
     <image:image>
-      <image:loc>https://finucrochet.com/img/CABECERA.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/CABECERA.webp</image:loc>
       <image:title>Amigurumis artesanales tejidos a crochet en Medellín</image:title>
       <image:caption>Colección Finucrochet — hilo 100% algodón premium</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://finucrochet.com/img/pesebre.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/pesebre.webp</image:loc>
       <image:title>Pesebre navideño tejido a crochet</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://finucrochet.com/img/ANGEL.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/ANGEL.webp</image:loc>
       <image:title>Ángel guardián tejido a crochet</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://finucrochet.com/img/virgen_maria.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/virgen_maria.webp</image:loc>
       <image:title>Virgen María amigurumi devocional</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://finucrochet.com/img/virgen_de_guadalupe.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/virgen_de_guadalupe.webp</image:loc>
       <image:title>Virgen de Guadalupe tejida a crochet</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://finucrochet.com/img/conejitas_bebe.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/conejitas_bebe.webp</image:loc>
       <image:title>Conejitas bebé amigurumi para regalo de nacimiento</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://finucrochet.com/img/LLAVERO_OSO.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/LLAVERO_OSO.webp</image:loc>
       <image:title>Llavero osito amigurumi personalizable</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://finucrochet.com/img/coleccion_productos.webp</image:loc>
+      <image:loc>https://www.finucrochet.com/img/coleccion_productos.webp</image:loc>
       <image:title>Colección de amigurumis Finucrochet</image:title>
     </image:image>
   </url>

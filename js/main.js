@@ -424,7 +424,7 @@ function slugify(s) {
 }
 
 function injectProductSchema() {
-  const SITE = 'https://finucrochet.com';
+  const SITE = 'https://www.finucrochet.com';
   const products = ITEMS.map(item => ({
     "@type": "Product",
     "@id": `${SITE}/#producto/${slugify(item.title)}`,

@@ -1,5 +1,5 @@
 # robots.txt — Finucrochet
-# https://finucrochet.com
+# https://www.finucrochet.com
 
 User-agent: *
 Allow: /
@@ -20,4 +20,4 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-Sitemap: https://finucrochet.com/sitemap.xml
+Sitemap: https://www.finucrochet.com/sitemap.xml
