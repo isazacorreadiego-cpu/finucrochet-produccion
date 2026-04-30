@@ -438,7 +438,15 @@ function injectProductSchema() {
       "category": catLabel(item.cat),
       "manufacturer": { "@id": `${SITE}/#business` },
       "material": "Hilo 100% algodón premium",
-      "url": `${SITE}/#galeria`
+      "url": `${SITE}/`,
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/MadeToOrder",
+        "priceCurrency": "COP",
+        "seller": { "@id": `${SITE}/#business` },
+        "itemCondition": "https://schema.org/NewCondition",
+        "areaServed": { "@type": "Country", "name": "Colombia" }
+      }
     };
   });
   const script = document.createElement('script');
