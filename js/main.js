@@ -414,7 +414,9 @@ window.lbClose = lbClose;
 window.lbNav = lbNav;
 
 /* ══════════════════════════════════════════
-   SEO: JSON-LD Product por cada amigurumi
+   SEO: JSON-LD VisualArtwork por cada amigurumi
+   Cada pieza de la galería es una obra de arte
+   tejida a mano, no un producto de catálogo.
 ══════════════════════════════════════════ */
 function slugify(s) {
   return s.toLowerCase()
@@ -423,37 +425,29 @@ function slugify(s) {
     .replace(/^-|-$/g, '');
 }
 
-function injectProductSchema() {
+function injectArtworkSchema() {
   const SITE = 'https://www.finucrochet.com';
-  const products = ITEMS.map(item => {
+  const artworks = ITEMS.map(item => {
     const slug = slugify(item.title);
     return {
-      "@type": "Product",
-      "@id": `${SITE}/#producto/${slug}`,
-      "sku": slug,
+      "@type": "VisualArtwork",
+      "@id": `${SITE}/#obra/${slug}`,
       "name": item.title,
       "image": `${SITE}/${item.img}`,
-      "description": `${item.title} — amigurumi tejido a crochet a mano con hilo 100% algodón premium. Pieza única artesanal hecha en Medellín, Colombia. Categoría: ${catLabel(item.cat)}.`,
-      "brand": { "@type": "Brand", "name": "Finucrochet" },
-      "category": catLabel(item.cat),
-      "manufacturer": { "@id": `${SITE}/#business` },
-      "material": "Hilo 100% algodón premium",
-      "url": `${SITE}/`,
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/MadeToOrder",
-        "priceCurrency": "COP",
-        "seller": { "@id": `${SITE}/#business` },
-        "itemCondition": "https://schema.org/NewCondition",
-        "areaServed": { "@type": "Country", "name": "Colombia" }
-      }
+      "description": `${item.title} — amigurumi tejido a crochet a mano con hilo 100% algodón premium. Pieza única artesanal hecha en Medellín, Colombia.`,
+      "creator": { "@id": `${SITE}/#business` },
+      "artform": "Amigurumi",
+      "artMedium": "Crochet, hilo 100% algodón premium",
+      "artworkSurface": "Tejido a mano",
+      "genre": catLabel(item.cat),
+      "url": `${SITE}/`
     };
   });
   const script = document.createElement('script');
   script.type = 'application/ld+json';
   script.textContent = JSON.stringify({
     "@context": "https://schema.org",
-    "@graph": products
+    "@graph": artworks
   });
   document.head.appendChild(script);
 }
@@ -461,5 +455,5 @@ function injectProductSchema() {
 /* ── Init ── */
 document.addEventListener('DOMContentLoaded', () => {
   buildMasonry();
-  injectProductSchema();
+  injectArtworkSchema();
 });
