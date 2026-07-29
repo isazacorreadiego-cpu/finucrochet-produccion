@@ -983,3 +983,10 @@ footer { background: var(--ink); position: relative; overflow: hidden; }
   .marquee-track { animation: none !important; }
   .hero-bg img { animation: none !important; }
 }
+
+/* ── Fallback del catálogo sin JavaScript ── */
+.masonry-fallback { max-width: 1000px; margin: 0 auto; padding: 1rem 1.5rem; color: var(--ink, #3a2f2c); }
+.masonry-fallback h3 { margin: 1.4rem 0 0.5rem; font-family: var(--f-display, serif); }
+.masonry-fallback ul { display: flex; flex-wrap: wrap; gap: 0.5rem 1.2rem; list-style: none; padding: 0; }
+.masonry-fallback li { position: relative; padding-left: 1rem; }
+.masonry-fallback li::before { content: '•'; position: absolute; left: 0; color: var(--rose, #c4847a); }

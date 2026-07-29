@@ -1,6 +1,11 @@
 # ══════════════════════════════════════════
 #   Finucrochet — Apache Configuration
 # ══════════════════════════════════════════
+# NOTA: en producción el sitio se sirve por GitHub Pages (CDN Fastly), que
+# NO ejecuta Apache. Estas reglas de GZIP/caché/seguridad solo aplican si el
+# sitio se migra a un servidor Apache propio. En GitHub Pages la compresión y
+# el cacheo los provee Fastly automáticamente; las cabeceras de seguridad
+# personalizadas (HSTS/CSP) no son configurables en ese hosting.
 
 # ── Tipos MIME correctos ──
 AddType application/xml .xml
