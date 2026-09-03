@@ -1,7 +1,8 @@
 # robots.txt — Finucrochet
 # https://www.finucrochet.com
+# Sitio fuera de servicio desde el 3-sep-2026.
+# El rastreo se mantiene permitido de forma deliberada: es necesario para que
+# los buscadores lean la etiqueta <meta name="robots" content="noindex"> del aviso.
 
 User-agent: *
 Allow: /
-
-Sitemap: https://www.finucrochet.com/sitemap.xml
