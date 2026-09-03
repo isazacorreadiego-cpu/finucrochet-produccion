@@ -8,7 +8,7 @@
   <!-- Se solicita a los buscadores no indexar este aviso -->
   <meta name="robots" content="noindex, nofollow">
 
-  <meta name="description" content="El sitio de Finucrochet se encuentra temporalmente fuera de servicio. Puede contactarnos por WhatsApp.">
+  <meta name="description" content="El sitio de Finucrochet se encuentra temporalmente fuera de servicio.">
   <link rel="canonical" href="https://www.finucrochet.com/">
 
   <meta property="og:type" content="website">
@@ -68,7 +68,7 @@
       background: var(--warm);
       border: 1px solid var(--petal);
       border-radius: 2px;
-      padding: clamp(2.25rem, 6vw, 3.5rem);
+      padding: clamp(2.5rem, 7vw, 4rem) clamp(2.25rem, 6vw, 3.5rem);
       text-align: center;
       box-shadow: 0 1px 2px rgba(28,16,8,.04), 0 12px 40px -12px rgba(92,58,46,.18);
     }
@@ -96,51 +96,20 @@
       color: var(--ink);
     }
 
-    p {
-      margin-top: 1.1rem;
+    p.mensaje {
+      margin-top: 1.25rem;
       font-size: 1rem;
       color: var(--brown);
+      max-width: 26rem;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .firma {
       font-family: 'Caveat', cursive;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       color: var(--rose);
-      margin-top: 1.75rem;
-    }
-
-    .contacto {
-      display: inline-flex;
-      align-items: center;
-      gap: .55rem;
-      margin-top: 2rem;
-      padding: .85rem 1.75rem;
-      font-size: .95rem;
-      font-weight: 400;
-      letter-spacing: .04em;
-      color: var(--warm);
-      background: var(--brown);
-      border-radius: 2px;
-      text-decoration: none;
-      transition: background .25s ease, transform .25s ease;
-    }
-
-    .contacto:hover,
-    .contacto:focus-visible {
-      background: var(--ink);
-      transform: translateY(-1px);
-    }
-
-    .contacto:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    .contacto svg { width: 1.15em; height: 1.15em; fill: currentColor; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .contacto { transition: none; }
-      .contacto:hover { transform: none; }
+      margin-top: 2.25rem;
     }
   </style>
 </head>
@@ -152,12 +121,7 @@
 
     <h1>Nuestro sitio se encuentra<br>temporalmente fuera de servicio</h1>
 
-    <p>Agradecemos su interés en nuestros tejidos artesanales. Seguimos atendiendo consultas y encargos por WhatsApp.</p>
-
-    <a class="contacto" href="https://wa.me/573058157511" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.4.5-.6.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 1.9 3 4.7 4.1 2.3.9 2.8.8 3.3.7.5-.1 1.6-.6 1.8-1.3.2-.6.2-1.2.2-1.3-.1-.1-.2-.2-.4-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.8L2 22l5.3-1.3c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
-      Escribir por WhatsApp
-    </a>
+    <p class="mensaje">Agradecemos su interés en nuestros tejidos artesanales. Estaremos de vuelta próximamente.</p>
 
     <p class="firma">Gracias por su comprensión</p>
   </main>
